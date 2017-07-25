@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { DeliveryHeaderComponent } from './delivery-header/delivery-header.component';
@@ -9,6 +10,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { DeliveryInteractivePizzaComponent } from './delivery-interactive-pizza/delivery-interactive-pizza.component';
 import { PizzaViewerComponent } from './pizza-viewer/pizza-viewer.component';
 import { PizzaFormComponent } from './pizza-form/pizza-form.component';
+import { PizzaCreatorComponent } from './pizza-creator/pizza-creator.component';
+import { PizzaSummaryComponent } from './pizza-summary/pizza-summary.component';
 
 const appRoutes: Routes = [
 
@@ -34,13 +37,16 @@ const appRoutes: Routes = [
     PageNotFoundComponent,
     DeliveryInteractivePizzaComponent,
     PizzaViewerComponent,
-    PizzaFormComponent
+    PizzaFormComponent,
+    PizzaCreatorComponent,
+    PizzaSummaryComponent
   ],
   imports: [
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
+    ReactiveFormsModule,
     BrowserModule
   ],
   providers: [],

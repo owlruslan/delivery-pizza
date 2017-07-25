@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-pizza-form',
   templateUrl: './pizza-form.component.html',
-  styleUrls: ['./pizza-form.component.css']
+  styleUrls: ['./pizza-form.component.scss']
 })
-export class PizzaFormComponent implements OnInit {
+export class PizzaFormComponent {
 
-  constructor() { }
+  @Input()
+  parent: FormGroup;
 
-  ngOnInit() {
+  @Output()
+  submit = new EventEmitter<any>();
+
+  onSubmit(event) {
+    event.stopPropagation();
+    this.submit.emit(this.parent);
   }
-
 }
