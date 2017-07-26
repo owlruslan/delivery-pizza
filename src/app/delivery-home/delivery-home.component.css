@@ -1,4 +1,8 @@
-:host .billboard {
+:host .leaderboard {
   margin: 40px auto;
-  font-size: 60pt;
+  font-size: 42pt;
+}
+
+.search-sidebar {
+  min-width: 300px;
 }

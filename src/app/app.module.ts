@@ -14,6 +14,7 @@ import { PizzaCreatorComponent } from './pizza-creator/pizza-creator.component';
 import { PizzaSummaryComponent } from './pizza-summary/pizza-summary.component';
 import { PizzaSizeComponent } from './pizza-size/pizza-size.component';
 import { PizzaToppingsComponent } from './pizza-toppings/pizza-toppings.component';
+import { SearchComponent } from './search/search.component';
 
 const appRoutes: Routes = [
 
@@ -43,7 +44,8 @@ const appRoutes: Routes = [
     PizzaCreatorComponent,
     PizzaSummaryComponent,
     PizzaSizeComponent,
-    PizzaToppingsComponent
+    PizzaToppingsComponent,
+    SearchComponent
   ],
   imports: [
     RouterModule.forRoot(
