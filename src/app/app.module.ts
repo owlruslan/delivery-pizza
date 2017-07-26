@@ -12,6 +12,8 @@ import { PizzaViewerComponent } from './pizza-viewer/pizza-viewer.component';
 import { PizzaFormComponent } from './pizza-form/pizza-form.component';
 import { PizzaCreatorComponent } from './pizza-creator/pizza-creator.component';
 import { PizzaSummaryComponent } from './pizza-summary/pizza-summary.component';
+import { PizzaSizeComponent } from './pizza-size/pizza-size.component';
+import { PizzaToppingsComponent } from './pizza-toppings/pizza-toppings.component';
 
 const appRoutes: Routes = [
 
@@ -39,7 +41,9 @@ const appRoutes: Routes = [
     PizzaViewerComponent,
     PizzaFormComponent,
     PizzaCreatorComponent,
-    PizzaSummaryComponent
+    PizzaSummaryComponent,
+    PizzaSizeComponent,
+    PizzaToppingsComponent
   ],
   imports: [
     RouterModule.forRoot(

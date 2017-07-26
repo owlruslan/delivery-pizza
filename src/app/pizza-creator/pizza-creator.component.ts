@@ -1,15 +1,53 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-pizza-creator',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './pizza-creator.component.html',
-  styleUrls: ['./pizza-creator.component.css']
+  styleUrls: ['./pizza-creator.component.scss']
 })
-export class PizzaCreatorComponent implements OnInit {
+export class PizzaCreatorComponent {
+  private visiblePizza: number = 0;
 
-  constructor() { }
+  @Input()
+  pizzas: FormArray;
 
-  ngOnInit() {
+  @Output()
+  add = new EventEmitter<any>();
+
+  @Output()
+  remove = new EventEmitter<any>();
+
+  @Output()
+  toggle = new EventEmitter<number>();
+
+  get openPizza() {
+    return this.visiblePizza;
   }
 
+  set openPizza(index: number) {
+    this.visiblePizza = index;
+    if (~index) {
+      this.toggle.emit(index);
+    }
+  }
+
+  addPizza() {
+    this.add.emit();
+    this.openPizza = this.pizzas.length - 1;
+  }
+
+  removePizza(index: number) {
+    this.remove.emit(index);
+    this.openPizza = this.pizzas.length - 1;
+  }
+
+  togglePizza(index: number) {
+    if (this.openPizza === index) {
+      this.openPizza = -1;
+      return;
+    }
+    this.openPizza = index;
+  }
 }

@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-pizza-summary',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './pizza-summary.component.html',
-  styleUrls: ['./pizza-summary.component.css']
+  styleUrls: ['./pizza-summary.component.scss']
 })
-export class PizzaSummaryComponent implements OnInit {
+export class PizzaSummaryComponent {
+  @Input()
+  parent: FormGroup;
 
-  constructor() { }
+  @Input()
+  total: string;
 
-  ngOnInit() {
-  }
-
+  @Input()
+  prices: any;
 }
