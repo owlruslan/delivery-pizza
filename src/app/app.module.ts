@@ -15,19 +15,22 @@ import { PizzaSummaryComponent } from './pizza-summary/pizza-summary.component';
 import { PizzaSizeComponent } from './pizza-size/pizza-size.component';
 import { PizzaToppingsComponent } from './pizza-toppings/pizza-toppings.component';
 import { SearchComponent } from './search/search.component';
+import { PizzaListComponent } from './pizza-list/pizza-list.component';
+import { PizzaService } from './services/pizza.service';
 
 const appRoutes: Routes = [
-
-
   {
     path: 'menu',
     component: DeliveryHomeComponent,
-    data: { title: 'Heroes List' }
   },
   { path: 'interactive', component: DeliveryInteractivePizzaComponent },
   { path: '',
     redirectTo: '/menu',
     pathMatch: 'full'
+  },
+  {
+    path: 'list',
+    component: PizzaListComponent,
   },
   { path: '**', component: PageNotFoundComponent }
 ];
@@ -45,7 +48,8 @@ const appRoutes: Routes = [
     PizzaSummaryComponent,
     PizzaSizeComponent,
     PizzaToppingsComponent,
-    SearchComponent
+    SearchComponent,
+    PizzaListComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -55,7 +59,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     BrowserModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ PizzaService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
