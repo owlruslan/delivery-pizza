@@ -18,6 +18,22 @@ export class PizzaListComponent implements OnInit {
   constructor(protected pizzaService: PizzaService) { }
 
   ngOnInit() {
+    const searchSource = this.searchTermStream
+      .debounceTime(1000)
+      .distinctUntilChanged()
+      .map(searchTerm => {
+        this.terms = searchTerm;
+        return {search: searchTerm};
+      });
+
+    const source = searchSource
+      .startWith({search: this.terms})
+      .switchMap((params: {search: string}) => {
+        return this.pizzaService.list(params.search);
+      })
+      .share();
+
+      this.items$ = source.pluck('items');
   }
 
   search(terms: string) {
