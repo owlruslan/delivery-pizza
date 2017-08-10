@@ -6,6 +6,7 @@
   <h3>Result</h3>
   <div class="ui segment" *ngFor="let pizza of items$ | async">
     <h3>{{ pizza.name }}</h3>
+    <h3><a href="">Map | coordinates:{{ pizza.coordinates }}<i class="marker icon"></i></a></h3>
     <p>Price: {{ pizza.price | currency:'USD':true }}</p>
   </div>
 </div>
