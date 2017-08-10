@@ -3,10 +3,10 @@
     <input #term (keyup)="search(term.value)" type="text" placeholder="Search...">
     <div class="ui button">Search</div>
   </div>
-  <h2>Result</h2>
+  <h3>Result</h3>
   <div class="ui segment" *ngFor="let pizza of items$ | async">
     <h3>{{ pizza.name }}</h3>
-    <h3>Price: </h3><p>{{ pizza.price}}</p>
+    <p>Price: {{ pizza.price | currency:'USD':true }}</p>
   </div>
 </div>
 

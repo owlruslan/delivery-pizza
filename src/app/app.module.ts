@@ -28,10 +28,6 @@ const appRoutes: Routes = [
     redirectTo: '/menu',
     pathMatch: 'full'
   },
-  {
-    path: 'list',
-    component: PizzaListComponent,
-  },
   { path: '**', component: PageNotFoundComponent }
 ];
 

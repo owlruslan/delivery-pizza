@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 
 import { Pizza } from '../services/Pizza';
 import { PizzaService } from '../services/pizza.service';
@@ -10,9 +11,9 @@ import { PizzaService } from '../services/pizza.service';
   styleUrls: ['./pizza-list.component.scss']
 })
 export class PizzaListComponent implements OnInit {
-  items$: Observable<Pizza[]>
+  items$: Observable<Pizza[]>;
 
-  terms: string = '';
+  terms: string;
   private searchTermStream = new Subject<string>();
 
   constructor(protected pizzaService: PizzaService) { }

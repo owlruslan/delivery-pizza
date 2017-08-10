@@ -1,34 +1,3 @@
 <div class="ui container home-container">
-  <div class="ui grid">
-    <div class="four wide column ui compact segment shadow search-sidebar">
-
-      <h3>Search Pizza</h3>
-      <app-search
-        #myInput></app-search>
-
-      <div class="ui divider"></div>
-      <h3>Cost</h3>
-      <div class="ui divider"></div>
-      <h3>Criterion</h3>
-    </div>
-
-    <div class="ten wide column ">
-      <div
-        *ngFor="let item of items"
-        class="ui card">
-        <div class="content">
-          <div class="header">{{ item.header }}</div>
-        </div>
-        <div class="content">
-          {{ item.text }}
-        </div>
-        <div class="extra content">
-          <button class="ui button">Join Project</button>
-        </div>
-      </div>
-  </div>
-
-  <!--<div *ngFor="let item of filteredItems">
-    {{item.name}}
-  </div>-->
+  <app-pizza-list></app-pizza-list>
 </div>
