@@ -17,6 +17,8 @@ import { PizzaToppingsComponent } from './pizza-toppings/pizza-toppings.componen
 import { PizzaListComponent } from './pizza-list/pizza-list.component';
 import { PizzaService } from './services/pizza.service';
 
+import { MenuModule } from './menu/menu.module';
+
 const appRoutes: Routes = [
   {
     path: 'menu',
@@ -43,17 +45,18 @@ const appRoutes: Routes = [
     PizzaSummaryComponent,
     PizzaSizeComponent,
     PizzaToppingsComponent,
-    PizzaListComponent
+    PizzaListComponent,
   ],
   imports: [
+    MenuModule,
+    ReactiveFormsModule,
+    BrowserModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
-    ),
-    ReactiveFormsModule,
-    BrowserModule
+    )
   ],
   providers: [ PizzaService ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
 })
 export class AppModule { }
