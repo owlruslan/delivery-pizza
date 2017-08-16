@@ -14,7 +14,6 @@ import { PizzaCreatorComponent } from './pizza-creator/pizza-creator.component';
 import { PizzaSummaryComponent } from './pizza-summary/pizza-summary.component';
 import { PizzaSizeComponent } from './pizza-size/pizza-size.component';
 import { PizzaToppingsComponent } from './pizza-toppings/pizza-toppings.component';
-import { SearchComponent } from './search/search.component';
 import { PizzaListComponent } from './pizza-list/pizza-list.component';
 import { PizzaService } from './services/pizza.service';
 
@@ -44,7 +43,6 @@ const appRoutes: Routes = [
     PizzaSummaryComponent,
     PizzaSizeComponent,
     PizzaToppingsComponent,
-    SearchComponent,
     PizzaListComponent
   ],
   imports: [

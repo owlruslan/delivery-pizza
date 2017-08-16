@@ -1,14 +1,50 @@
-<div class="search-box">
-  <div class="ui fluid action input">
-    <input #term (keyup)="search(term.value)" type="text" placeholder="Search...">
-    <div class="ui button">Search</div>
+<div class="search-container">
+
+  <div class="search-box-container ui segment">
+
+    <div class="ui fluid action input search-box">
+      <input #term (keyup)="search(term.value)" type="text" placeholder="Search...">
+      <div class="ui button">Search</div>
+    </div>
+
+    <div class="filter-bar">
+      <span>Filters</span>
+      <div class="filters">
+        
+        <div class="ui toggle checkbox">
+          <input type="checkbox" name="public">
+          <label>Lowest ratings</label>
+        </div>
+
+        <div class="ui toggle checkbox">
+          <input type="checkbox" name="public">
+          <label>Best ratings</label>
+        </div>
+
+      </div>
+    </div>
+
   </div>
-  <h3>Result</h3>
-  <div class="ui segment" *ngFor="let pizza of items$ | async">
-    <h3>{{ pizza.name }}</h3>
-    <h3><a href="">Map | coordinates:{{ pizza.coordinates }}<i class="marker icon"></i></a></h3>
-    <p>Price: {{ pizza.price | currency:'USD':true }}</p>
+
+  <div class="results-container">
+    <div class="pizza-item ui segment" *ngFor="let pizza of items$ | async">
+      <div class="pizza-image">
+        <div class="ui small image">
+          <img src="../../assets/toppings/bacon.svg"/>
+        </div>
+      </div>
+      <div class="pizza-info">
+        <span>Price: {{ pizza.price | currency:'USD':true }}</span>
+        <span>{{ pizza.name }}</span>
+        <span><a href="">Map | coordinates:{{ pizza.coordinates }}<i class="marker icon"></i></a></span>
+        <div class="__bottom">
+          <div class="rating">
+            <i class="heart icon"></i>
+            <span>100</span>
+          </div> 
+        </div>
+      </div>
+    </div>
   </div>
+
 </div>
-
-

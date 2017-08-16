@@ -7,6 +7,51 @@
 }
 
 .search-box {
+    min-width: 200px;
+    height: 40px;
+
+    input:focus {
+        border: 1px solid rgb(188, 228, 196);
+    }
+}
+
+.search-box-container {
+    min-width: 300px;
+}
+
+.search-container {
     max-width: 960px;
     margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
 }
+
+.results-container {
+    margin: 0 0 0 10px;
+    flex-grow: 1;
+
+    .__bottom {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .order-btn {
+        min-width: 120px;
+    }
+
+    .heart {
+        color: #EF4646;
+    }
+
+    .pizza-item {
+        cursor: pointer;
+        border: 1px solid rgb(225, 225, 225);
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .pizza-item:hover {
+        border: 1px solid rgb(188, 228, 196);
+    }
+}
+
