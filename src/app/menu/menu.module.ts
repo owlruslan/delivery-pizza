@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
-import { TestComponent } from './test/test.component';
+import { DeliveryHomeComponent } from './delivery-home/delivery-home.component';
+import { PizzaListComponent } from './pizza-list/pizza-list.component';
+import { PizzaService } from './services/pizza.service';
 
 const menuRoutes: Routes = [
-  { path: 'test', component: TestComponent }
+  { path: 'menu', component: DeliveryHomeComponent }
 ];
 
 @NgModule({
@@ -16,7 +19,9 @@ const menuRoutes: Routes = [
     )
   ],
   declarations: [
-    TestComponent
+    DeliveryHomeComponent,
+    PizzaListComponent,
   ],
+  providers: [ PizzaService ]
 })
 export class MenuModule { }
