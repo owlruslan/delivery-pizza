@@ -11,7 +11,7 @@ export class PizzaService {
 
   list(search: string = null, page: number = 1, limit: number = 10): Observable<ListResult<Pizza>> {
     const pizzaResult = this.pizzas.filter(function(pizza: Pizza) {
-      return (search) ? pizza.name.toLowerCase().indexOf(search) !== -1 : true;
+      return (search) ? pizza.name.toLowerCase().indexOf(search.toLowerCase()) !== -1 : true;
     });
 
     return Observable.of({items: pizzaResult}).delay(100);
