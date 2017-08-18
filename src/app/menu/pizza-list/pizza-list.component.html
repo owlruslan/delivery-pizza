@@ -10,7 +10,7 @@
     <div class="filter-bar">
       <span>Filters</span>
       <div class="filters">
-        
+
         <div class="ui toggle checkbox">
           <input type="checkbox" name="public">
           <label>Lowest ratings</label>
@@ -27,23 +27,16 @@
   </div>
 
   <div class="results-container">
-    <div class="pizza-item ui segment" *ngFor="let pizza of items$ | async">
-      <div class="pizza-image">
-        <div class="ui small image">
-          <img src="../../assets/toppings/bacon.svg"/>
-        </div>
-      </div>
-      <div class="pizza-info">
-        <span>Price: {{ pizza.price | currency:'USD':true }}</span>
-        <span>{{ pizza.name }}</span>
-        <span><a href="">Map | coordinates:{{ pizza.coordinates }}<i class="marker icon"></i></a></span>
-        <div class="__bottom">
-          <div class="rating">
-            <i class="heart icon"></i>
-            <span>100</span>
-          </div> 
-        </div>
-      </div>
+    <div
+      class="pizza-item ui segment"
+      *ngFor="let pizza of items$ | async"
+      id="{{ pizza.id }}">
+
+      <app-pizza-card
+        [pizza]="pizza"
+        (order)="onOrder($event)">
+      </app-pizza-card>
+
     </div>
   </div>
 

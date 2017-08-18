@@ -1,6 +1,6 @@
 import { DeliveryPage } from './app.po';
 
-describe('delivery-header App', () => {
+describe('header App', () => {
   let page: DeliveryPage;
 
   beforeEach(() => {

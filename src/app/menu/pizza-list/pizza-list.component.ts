@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
@@ -11,6 +11,7 @@ import { PizzaService } from '../services/pizza.service';
   styleUrls: ['./pizza-list.component.scss']
 })
 export class PizzaListComponent implements OnInit {
+
   items$: Observable<Pizza[]>;
 
   terms: string;
@@ -39,5 +40,10 @@ export class PizzaListComponent implements OnInit {
 
   search(terms: string) {
     this.searchTermStream.next(terms);
+  }
+
+  onOrder(id: number): void {
+
+    console.log(id);
   }
 }

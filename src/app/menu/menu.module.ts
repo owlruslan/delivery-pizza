@@ -6,9 +6,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DeliveryHomeComponent } from './delivery-home/delivery-home.component';
 import { PizzaListComponent } from './pizza-list/pizza-list.component';
 import { PizzaService } from './services/pizza.service';
+import { PizzaCardComponent } from './pizza-card/pizza-card.component';
 
 const menuRoutes: Routes = [
-  { path: 'menu', component: DeliveryHomeComponent }
+  { path: 'menu', component: DeliveryHomeComponent },
+  { path: 'menu/card/:id', component: PizzaCardComponent }
 ];
 
 @NgModule({
@@ -21,6 +23,7 @@ const menuRoutes: Routes = [
   declarations: [
     DeliveryHomeComponent,
     PizzaListComponent,
+    PizzaCardComponent,
   ],
   providers: [ PizzaService ]
 })

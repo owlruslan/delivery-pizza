@@ -1,0 +1,46 @@
+<div
+  class="container"
+  (click)="toggled = !toggled">
+  <div class="pizza-image">
+    <div class="ui small image">
+      <img src="../../assets/toppings/bacon.svg"/>
+    </div>
+  </div>
+
+  <div class="pizza-info" >
+    <span>Price: {{ pizza.price | currency:'USD':true }}</span>
+    <span>{{ pizza.name }}</span>
+    <span><a href="">Map | coordinates:{{ pizza.coordinates }}<i class="marker icon"></i></a></span>
+    <div class="__bottom">
+      <div class="rating">
+        <i class="heart icon"></i>
+        <span>100</span>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="toggled">
+
+    <div class="map">Some map</div>
+
+    <div class="description">
+      <span>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.
+        Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI
+        века. В то время некий безымянный печатник создал большую коллекцию размеров
+        и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не
+        только успешно пережил без заметных изменений пять веков, но и перешагнул
+        в электронный дизайн. Его популяризации в новое время послужили публикация
+        листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время,
+        программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется
+        Lorem Ipsum.</span>
+    </div>
+
+    <button
+      class="medium ui button order-btn"
+      (click)="onOrder($event)">
+      Order
+    </button>
+
+  </div>
+</div>
+

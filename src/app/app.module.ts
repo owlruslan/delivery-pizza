@@ -6,7 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MenuModule } from './menu/menu.module';
-import { DeliveryHeaderComponent } from './delivery-header/delivery-header.component';
+import { DeliveryHeaderComponent } from './header/delivery-header.component';
 import { InteractivePizzaModule } from './interactive-pizza/interactive-pizza.module';
 
 const appRoutes: Routes = [
